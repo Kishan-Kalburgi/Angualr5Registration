@@ -1,3 +1,101 @@
-<p>
-  adv-form works!
-</p>
+<div class="custRow row">
+  <br>
+</div>
+
+<div class="custRow row">
+  <div class="col-md-2 col-xs-2 col-lg-2">
+    <span></span>
+  </div>
+
+  <div class="col-md-8 col-xs-8 col-lg-8">
+
+    <form novalidate (ngSubmit)="onFormSubmit(adv)" #adv="ngForm">
+
+      <div class="container">
+        <div style="text-align:center;">
+          <h1>Booking Information</h1>
+          <p>Please fill in this form</p>
+        </div>
+        <hr>
+
+        <div class="form-group">
+          <label for="fromPlace">
+            <b>Where from?</b>
+          </label>
+          <input type="text" class="form-control" [ngModel]="user.fromPlace" name="fromPlace" #fromPlace="ngModel" id="inputfromPlace"
+            placeholder="Where from?" required>
+        </div>
+        <!-- fromPlace error block -->
+        <div *ngIf="(fromPlace.invalid && ( fromPlace.touched || fromPlace.dirty) ) || isSubmitted" class="col-sm-6 text-danger">
+          <div *ngIf="fromPlace.errors?.required">
+            Please enter the From Place
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="toPlace">
+            <b>Where to?</b>
+          </label>
+          <input type="text" class="form-control" [ngModel]="user.toPlace" name="toPlace" #toPlace="ngModel" id="inputtoPlace" placeholder="Where to?"
+            required>
+        </div>
+        <!-- toPlace error block -->
+        <div *ngIf="(toPlace.invalid && ( toPlace.touched || toPlace.dirty)) || isSubmitted" class="col-sm-6 text-danger">
+          <div *ngIf="toPlace.errors?.required">
+            Please enter the To Place
+          </div>
+        </div>
+
+        <!-- Select Date of Birth block -->
+        <div class="form-group">
+          <label for="startDate">
+            <b>Departure date</b>
+          </label>
+          <input type="date" class="form-control" [ngModel]="user.startDate" name="startDate" #startDate="ngModel" id="inputstartDate"
+            placeholder="Select Departure date" required>
+        </div>
+        <!-- startDate error block -->
+        <div *ngIf="(startDate.invalid && ( startDate.touched || startDate.dirty)) || isSubmitted" class="col-sm-6 text-danger">
+          <div *ngIf="startDate.errors?.required">
+            Please enter the Departure date
+          </div>
+        </div>
+
+        <!-- Select Date of Birth block -->
+        <div class="form-group">
+          <label for="endDate">
+            <b>Return date</b>
+          </label>
+          <input type="date" class="form-control" [ngModel]="user.endDate" name="endDate" #endDate="ngModel" id="inputendDate" placeholder="Select Departure date"
+            required>
+        </div>
+        <!-- endDate error block -->
+        <div *ngIf="(endDate.invalid && ( endDate.touched || endDate.dirty)) || isSubmitted" class="col-sm-6 text-danger">
+          <div *ngIf="endDate.errors?.required">
+            Please enter the Return date
+          </div>
+        </div>
+
+        <br>
+        <!-- <div class="progress form-group col-lg-6">
+          <div class="progress-bar bg-success col-lg-6" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div> -->
+        <div class="clearfix">
+          <button type="submit" class="btn btn-primary" style="float: right;"> Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  
+
+  <div class="col-md-2 col-xs-2 col-lg-2">
+    <span></span>
+  </div>
+</div>
+
+<div class="custRow row">
+  <br>
+</div>
