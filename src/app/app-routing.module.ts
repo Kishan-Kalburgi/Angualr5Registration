@@ -7,7 +7,7 @@ import { ReportComponent } from './report/report.component';
 const routes: Routes = [
   {path: "basic", component: BasicFormComponent},
   {path: "adv", component: AdvFormComponent},
-  {path: "report", component: ReportComponent},
+  {path: "report/:id", component: ReportComponent},
   {path: "", redirectTo: "/basic", pathMatch: "full"}
 ];
 
